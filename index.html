@@ -26,8 +26,7 @@
     <footer>Made by <a href="https://github.com/alexander15M" class="personal-link">Alexander M</a></footer>
 <script>
     async function createBookCards () {
-   showClearButton()
-   const items = await retrieveData();
+   const items = await retrieveData() || [];
    let finalHtml = "";
    for (let i = 0; i < items.length; i++) {
      if (i > 8) {
@@ -38,6 +37,10 @@
      thumbnail = thumbnail.replace("http://", "https://")
      let title = book?.volumeInfo?.title || "";
      title = title.split(" /")[0];
+     if (title.length > 150) {
+      title = `${title.substring(0, 149)}...`
+     }
+
      const author = book?.volumeInfo?.authors ? book.volumeInfo.authors[0] : 'Not available';
          
      const publisher = book?.volumeInfo?.publisher || "Not available"
