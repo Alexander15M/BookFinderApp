@@ -1,8 +1,15 @@
 async function retrieveData () {
     searchInputValue = document.querySelector("input.search-bar")?.value;
-   const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchInputValue}`);
-   const body = await response.json();
-   return body?.items
+    let items = [];
+    if (searchInputValue && searchInputValue.length && searchInputValue.length > 0) {
+      const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchInputValue}`);
+      const body = await response.json();
+      if (body && body.items && body.items.length > 0) {
+        items = body.items;
+      }
+    return items;
+  }
+  
  }
  
  function deleteBookCards() {
