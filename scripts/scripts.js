@@ -22,7 +22,6 @@ async function retrieveData () {
  
  function showLoading () {
    deleteBookCards();
-   const bookContainer = 
    document.getElementById("loading-spinner").classList.remove('hidden');
  }
  
@@ -34,9 +33,16 @@ async function retrieveData () {
    showLoading();
    await createBookCards()
  }
- document.addEventListener("DOMContentLoaded", function(){
-   searchButton = document.querySelector("button.lookup-button");
- 
-   searchButton.addEventListener("click", handleSearch);
- })
+ document.addEventListener("DOMContentLoaded", function () {
+  const searchButton = document.querySelector("button.lookup-button");
+  searchButton.addEventListener("click", handleSearch);
+
+  const input = document.querySelector("input.search-bar");
+  input.addEventListener("keyup", function (event) {
+    if (event.keyCode === 13) {
+      event.preventDefault();
+      document.querySelector("button.lookup-button").click();
+    }
+  });
+});
    
