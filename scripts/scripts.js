@@ -17,9 +17,7 @@ async function retrieveData () {
    bookContainer.innerHTML = "";
  }
  
- function showClearButton() {
- } 
- 
+
  function showLoading () {
    deleteBookCards();
    document.getElementById("loading-spinner").classList.remove('hidden');
