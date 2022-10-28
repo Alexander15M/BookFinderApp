@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./styles/style.css">
+    <script src="/scripts/scripts.js"></script>
+    <title>Book search App</title>
+</head>
+<body>
+    <header><a href="#" class="header-logo">BookFinder app</a><ul class="navbar-links">
+        <li class="navbar-items"><a href="#">Contact</a></li>
+        <li class="navbar-items"><a href="#">About</a></li>
+    </ul></header>
+    <div class="root-container">
+        <div class="search"> 
+          <h1 class="title">Search some books!</h1>
+          <div class="lookup">
+            <input type="text" class="search-bar" placeholder="search by name"><button class="lookup-button">Search!</button>
+          </div>
+        </div><div id="loading-spinner" class="hidden"></div>
+          <div id="books-container" class="hidden">
+          </div>
+      </div>
+    <footer>Made by <a href="https://github.com/alexander15M" class="personal-link">Alexander M</a></footer>
+<script>
+    async function createBookCards () {
+   showClearButton()
+   const items = await retrieveData();
+   let finalHtml = "";
+   for (let i = 0; i < items.length; i++) {
+     if (i > 8) {
+       break
+     }
+     const book = items[i];
+     let thumbnail = book?.volumeInfo?.imageLinks?.thumbnail || "#";
+     thumbnail = thumbnail.replace("http://", "https://")
+     let title = book?.volumeInfo?.title || "";
+     title = title.split(" /")[0];
+     const author = book?.volumeInfo?.authors ? book.volumeInfo.authors[0] : 'Not available';
+         
+     const publisher = book?.volumeInfo?.publisher || "Not available"
+             
+     const publishedDate = book?.volumeInfo?.publishedDate || "Not available"
+     
+     const div_book_card = `<div class="book-card">
+     <div class="book-content">
+     <div class=thumbnail-container> 
+       <img class="book-thumbnail" src="${thumbnail}" alt="">
+     </div>
+       <div class="book-info">
+                 <h2 class="book-title">${title}</h2>
+         <p><b class="book-info-title">Author</b>: ${author}</p>
+         <p><b class="book-info-title">Publisher</b>: ${publisher}</p>
+         <p><b class="book-info-title">Published Date</b>: ${publishedDate}</p>
+         <a class="know-more" href="${book?.selfLink || '#'}">More</a>
+       </div>
+     </div>
+   </div>`;
+     finalHtml += div_book_card + "\n";
+   }
+ 
+   const bookContainer = document.getElementById("books-container");
+   bookContainer.innerHTML = finalHtml;
+   hideLoading();
+   bookContainer.classList.remove("hidden")
+ }
+</script>
+</body>
+</html>

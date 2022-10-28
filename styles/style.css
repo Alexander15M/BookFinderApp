@@ -1,0 +1,179 @@
+body {
+    margin: 0;
+    font-family: "Papyrus", "Copperplate", fantasy;
+    background-color: #eff2f1;
+    color: #403e3e;
+    min-height: 100vh;
+    display:flex; flex-direction:column;
+    
+  }
+header {
+  display: flex;
+  color: #377737;
+  padding: 10px 10px;
+  text-align: center;
+  justify-content: space-between;
+}
+
+ul.navbar-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li.navbar-items {
+  display: inline;
+}
+
+.root-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex:1;
+  max-width: 1500px;
+  align-self: center;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  height: 100px;
+  flex-direction: column;
+  margin-bottom: 50px
+}
+
+.lookup  {
+    display: flex;
+}
+
+.search-bar {
+    border: none;
+    padding: 5px 20px;
+    outline: none
+}
+
+.lookup-button {
+  border: none;
+}
+
+#books-container {
+  display: flex;  
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: center;
+  row-gap: 20px;
+  width: 100%;
+}
+
+
+.book-card {
+  display: flex;
+  border: 3px solid rgb(70,150,70); 
+  border-radius: 8px;
+  height: 300px;
+  width: 30%;
+  box-shadow: 0 8px 16px 0 rgba(125,0,125,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  flex-direction: column
+}
+
+.book-content {
+  display: flex;
+  width: 100%;
+}
+
+.book-thumbnail {
+  width: 190px;
+  height: 300px;
+}
+.thumbnail-container {
+  width: auto;
+}
+
+.book-info {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-height: 300px;
+  padding: 20px;
+}
+
+book-info > p {
+  font-size: 0.8em;
+}
+
+.book-title {
+  font-size: 1em;
+  margin: 0;
+}
+
+.hidden {
+  display: none
+}
+
+.know-more {
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  display: inline-block;
+  font-size: 16px;
+  opacity: 0.7;
+  padding: 10px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.know-more:hover {
+  opacity:1;
+}
+
+
+#loading-spinner {
+  animation: spin 1s infinite linear;
+  
+  border: 5px #4CAF50 solid;
+  border-radius: 100%;
+  border-top: 5px #ddd solid;
+  
+  height: 20px;
+  width: 20px;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+footer {
+width: 100%;
+background-color: #377737;
+color: white;
+padding: 10px 0;
+margin-top: 50px;
+text-align: center;
+}
+
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: underline;
+}
