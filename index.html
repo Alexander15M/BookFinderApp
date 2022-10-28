@@ -37,8 +37,8 @@
      thumbnail = thumbnail.replace("http://", "https://")
      let title = book?.volumeInfo?.title || "";
      title = title.split(" /")[0];
-     if (title.length > 150) {
-      title = `${title.substring(0, 149)}...`
+     if (title.length > 110) {
+      title = `${title.substring(0, 109)}...`
      }
 
      const author = book?.volumeInfo?.authors ? book.volumeInfo.authors[0] : 'Not available';
