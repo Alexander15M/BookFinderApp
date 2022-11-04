@@ -9,20 +9,26 @@ body {
   }
 header {
   display: flex;
-  color: #377737;
-  padding: 10px 10px;
+  background-color: #309C4F;
+  overflow: hidden;
   text-align: center;
   justify-content: space-between;
 }
 
-ul.navbar-links {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+.navbar-links a, .header-logo {
+  float: left;
+  color: #eff2f1;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
 }
 
-li.navbar-items {
-  display: inline;
+.navbar-links a:hover {
+  background-color: #ddd;
+  color: #309C4F;
 }
 
 .root-container {
@@ -47,14 +53,28 @@ li.navbar-items {
     display: flex;
 }
 
-.search-bar {
+.search-box {
     border: none;
     padding: 5px 20px;
-    outline: none
+    outline: none;
+    border-radius: 5px 0 0 5px;
+    border: 3px solid #309C4F;
+    border-right: none;
 }
 
 .lookup-button {
-  border: none;
+  border: 3px solid #309C4F;
+  border-left: none;
+  background-color: #309C4F;
+  border-radius: 0 5px 5px 0;
+  padding: 5px 8px;
+}
+
+.lookup-button:hover {
+  cursor: pointer
+}
+.fa-magnifying-glass {
+  color:#eff2f1;
 }
 
 #books-container {
@@ -154,7 +174,7 @@ book-info > p {
 
 footer {
 width: 100%;
-background-color: #377737;
+background-color: #309C4F;
 color: white;
 padding: 10px 0;
 margin-top: 50px;
@@ -176,4 +196,22 @@ a:hover {
 
 a:active {
   text-decoration: underline;
+}
+
+
+@media screen and (max-width:1300px) {
+  .book-card{
+    width:45%;
+  }
+}
+@media screen and (max-width:900px) {
+  .book-card{
+    width:80%;
+  }
+}
+
+@media screen and (max-width:600px) {
+  .book-card{
+    width:90%;
+  }
 }

@@ -6,18 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./styles/style.css">
     <script src="/scripts/scripts.js"></script>
+    <script src="https://kit.fontawesome.com/026f86d8a9.js" crossorigin="anonymous"></script>
     <title>Book search App</title>
 </head>
 <body>
-    <header><a href="#" class="header-logo">BookFinder app</a><ul class="navbar-links">
-        <li class="navbar-items"><a href="#">Contact</a></li>
-        <li class="navbar-items"><a href="#">About</a></li>
-    </ul></header>
+    <header><a href="#" class="header-logo">BookFinder app</a><div class="navbar-links">
+        <a href="#contact">Contact</a></li>
+        <a href="#about">About</a>
+    </div></header>
     <div class="root-container">
         <div class="search"> 
           <h1 class="title">Search some books!</h1>
           <div class="lookup">
-            <input type="text" class="search-bar" placeholder="search by name"><button class="lookup-button">Search!</button>
+            <input type="text" class="search-box" placeholder="search by name"><button title="Search" class="lookup-button"><i class="fa-solid fa-magnifying-glass"></i></button>
           </div>
         </div><div id="loading-spinner" class="hidden"></div>
           <div id="books-container" class="hidden">
@@ -57,7 +58,7 @@
          <p><b class="book-info-title">Author</b>: ${author}</p>
          <p><b class="book-info-title">Publisher</b>: ${publisher}</p>
          <p><b class="book-info-title">Published Date</b>: ${publishedDate}</p>
-         <a class="know-more" href="${book?.selfLink || '#'}">More</a>
+         <a class="know-more" href="${book?.volumeInfo?.previewLink || '#'}">Preview</a>
        </div>
      </div>
    </div>`;
