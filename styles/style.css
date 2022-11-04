@@ -119,7 +119,7 @@ header {
   padding: 20px;
 }
 
-book-info > p {
+.book-info > p {
   font-size: 0.8em;
 }
 
@@ -206,7 +206,7 @@ a:active {
 }
 @media screen and (max-width:900px) {
   .book-card{
-    width:80%;
+    width:60%;
   }
 }
 
@@ -215,3 +215,4 @@ a:active {
     width:90%;
   }
 }
+
