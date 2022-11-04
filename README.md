@@ -16,8 +16,8 @@ Uses the [Google Books API](https://developers.google.com/books/docs/overview) f
 
 ## Links
 
-[Deployed site](https://bestbookfinder.netlify.com/)
-[Repository](https://github.com/Alexander15M/BookFinderApp)
+- [Deployed site](https://bestbookfinder.netlify.com/)
+- [Repository](https://github.com/Alexander15M/BookFinderApp)
 
 ## Acknowledgement
 
