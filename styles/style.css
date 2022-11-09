@@ -121,6 +121,7 @@ header {
 
 .book-info > p {
   font-size: 0.8em;
+  margin:0
 }
 
 .book-title {
@@ -213,6 +214,21 @@ a:active {
 @media screen and (max-width:600px) {
   .book-card{
     width:90%;
+  }
+}
+
+@media screen and (max-width:400px) {
+  .book-thumbnail {
+    width: 150px;
+    height: 270px;
+  }
+
+  .book-card {
+    height: 270px;
+  }
+
+  .book-info{
+    max-height: 270px;
   }
 }
 
